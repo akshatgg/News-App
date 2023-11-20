@@ -49,6 +49,9 @@ function News() {
       ]
   
   })
+
+  
+  
   return (
     
     <div className='text-center '>
@@ -56,9 +59,20 @@ function News() {
       Latest News
       </p>
       <div className='grid grid-cols-3  justify-items-center gap-y-6'>
-      <NewsItem title="mytitle" description="desc" image="https://content.api.news/v3/images/bin/a32283a16f245590b11e1624963855b2"/>
-      <NewsItem/>
-     
+      
+            
+     {news.articles.map((element) => (
+         <NewsItem 
+         id={element.id}
+         title={element.title} 
+         description={element.description} 
+         
+         image={element.urlToImage}
+         readMore={element.url}
+         />
+     ))}
+    
+    
  
      
 
