@@ -1,5 +1,6 @@
     import React, { useEffect, useState } from 'react'
     import NewsItem from './NewsItem'
+import Spinner from './Spinner';
 
     function News({apikey,pagesize}) {
     const[page,setpage]=useState(1)
@@ -7,7 +8,7 @@
     //     articles:[],
     //     page:1
     // })
-
+    const [loading,setloading]=useState(true);
     const[news,setnews]=useState([])
 
 
@@ -21,11 +22,15 @@
                 // articles:result.articles});
             setnews(result.articles);
             //    setnews(result)
+            setloading(true)
             }
         
         
         catch (error) {
             console.error('Error in fetching data:', error);
+        }
+        finally{
+            setloading(false)
         }
     };
     
@@ -43,6 +48,9 @@ const Prevbtn = async () => {
     } catch (error) {
         console.error('Error in fetching data:', error);
     }
+    finally{
+        setloading(false)
+    }
 }
 
 const Nextbtn = async () => {
@@ -52,8 +60,12 @@ const Nextbtn = async () => {
          const result = await response.json();
         setpage(page + 1);
         setnews(result.articles);
+        setloading(true)
     } catch (error) {
         console.error('Error in fetching data:', error);
+    }
+    finally{
+        setloading(false)
     }
 }
 
@@ -63,9 +75,11 @@ const Nextbtn = async () => {
         <p className='text-4xl mt-5 mb-5'>
         Latest News
         </p>
+        <div className='flex justify-content-center'>
+            {loading && <Spinner/>}  
+            </div>    
         <div className='grid grid-cols-3  justify-items-center gap-y-6'>
         
-                
         {news.map((element) => (
             <NewsItem 
             id={element.id}
