@@ -4,8 +4,8 @@ import React from 'react'
 import NavBar from './Component/NavBar';
 import News from './Component/News';
 
-// let apikey=process.env.REACT_APIs_KEY
-
+// const apikey=process.env.REACT_API_KEY;
+// console.log(apikey)
 let apikey=""
 function App() {
   return (
