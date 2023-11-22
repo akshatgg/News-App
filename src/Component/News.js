@@ -96,11 +96,11 @@ const Nextbtn = async () => {
 
 
 
-        <div className='d-flex justify-space-between space-x-32'>
-            <button disabled={page <= 1} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={Prevbtn}>&larr;Prev</button>
-            <button disabled={page+1 > Math.ceil(news.totalResults / 20)} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={Nextbtn}>
+        <div className='d-flex justify-space-between space-x-96'>
+           {loading===false ? (<button disabled={page <= 1} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={Prevbtn}>&larr;Prev</button>):null}
+            {loading===false ? (<button disabled={page+1 > Math.ceil(news.totalResults / 20)} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={Nextbtn}>
   Next&rarr;
-</button>
+</button>):null}
             </div>
         </div>
 
