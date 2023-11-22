@@ -1,7 +1,7 @@
     import React, { useEffect, useState } from 'react'
     import NewsItem from './NewsItem'
 
-    function News({apikey}) {
+    function News({apikey,pagesize}) {
     const[page,setpage]=useState(1)
     // const[news,setnews]=useState({
     //     articles:[],
@@ -14,7 +14,7 @@
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page}&pagesize=10`);         
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page}&pagesize=${pagesize}`);         
                    const result = await response.json();
            
            
@@ -35,7 +35,7 @@
 const Prevbtn = async () => {
     console.log("prev");
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page - 1}&pagesize=10`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page - 1}&pagesize=${pagesize}`);       
          const result = await response.json();
        
         setpage(page -   1);
@@ -48,7 +48,7 @@ const Prevbtn = async () => {
 const Nextbtn = async () => {
     console.log("Next")
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page + 1}&pagesize=10`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page + 1}&pagesize=${pagesize}`);       
          const result = await response.json();
         setpage(page + 1);
         setnews(result.articles);
