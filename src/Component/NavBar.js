@@ -1,25 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      // Set showCategories to false when scrolling up
-      setShowCategories(scrollY <= 0);
-    };
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-
-    // Remove the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array to run the effect only once on mount
 
   return (
     <div>
@@ -57,7 +40,7 @@ function NavBar() {
                 {showCategories && (
                   <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md">
                     <li>
-                      <Link to="/general" className="text-gray-800 hover:text-blue-700">General</Link>
+                      <Link to="/" className="text-gray-800 hover:text-blue-700">General</Link>
                     </li>
                     <li>
                       <Link to="/health" className="text-gray-800 hover:text-blue-700">Health</Link>
