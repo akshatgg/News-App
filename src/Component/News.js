@@ -1,8 +1,8 @@
     import React, { useEffect, useState } from 'react'
     import NewsItem from './NewsItem'
-import Spinner from './Spinner';
+    import Spinner from './Spinner';
 
-    function News({apikey,pagesize}) {
+    function News({apikey,pagesize,categories}) {
     const[page,setpage]=useState(1)
     // const[news,setnews]=useState({
     //     articles:[],
@@ -10,12 +10,12 @@ import Spinner from './Spinner';
     // })
     const [loading,setloading]=useState(true);
     const[news,setnews]=useState([])
-
-
+    
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page}&pagesize=${pagesize}`);         
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page}&pagesize=${pagesize}`);         
                    const result = await response.json();
            
            
@@ -40,7 +40,7 @@ import Spinner from './Spinner';
 const Prevbtn = async () => {
     console.log("prev");
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page - 1}&pagesize=${pagesize}`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page - 1}&pagesize=${pagesize}`);       
          const result = await response.json();
        
         setpage(page -   1);
@@ -56,7 +56,7 @@ const Prevbtn = async () => {
 const Nextbtn = async () => {
     console.log("Next")
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&page=${page + 1}&pagesize=${pagesize}`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page + 1}&pagesize=${pagesize}`);       
          const result = await response.json();
         setpage(page + 1);
         setnews(result.articles);
@@ -75,7 +75,7 @@ const Nextbtn = async () => {
         <p className='text-4xl mt-5 mb-5'>
         Latest News
         </p>
-        <div className='flex justify-content-center'>
+        <div className='flex justify-content-center'>       
             {loading && <Spinner/>}  
             </div>    
         <div className='grid grid-cols-3  justify-items-center gap-y-6'>
