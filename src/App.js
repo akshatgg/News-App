@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './Component/NavBar';
 import News from './Component/News';
 
-let apikey = "";
+let apikey = process.env.REACT_APP_API_KEY;
 
 function App() {
   return (
