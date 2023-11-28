@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Flag} from 'semantic-ui-react'
 
+import 'semantic-ui-css/semantic.min.css';
 function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
+  const [showCountry, setShowCountry] = useState(false);
+
 
   return (
     <div>
@@ -57,6 +61,42 @@ function NavBar() {
                   </ul>
                 )}
               </li>
+
+
+
+              <li className='z-10'>
+                <Link
+                  onClick={() => setShowCountry(!showCountry)}
+                  to="/#"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Country &#9662;
+                </Link>
+                {showCountry && (
+                  
+                  <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md">
+                    
+                    <li>
+                    
+                      <Link to="/" className="text-gray-800 hover:text-blue-700"> <Flag name='au'/>Australia </Link>
+                    </li>
+                    <li>
+                      <Link to="/health" className="text-gray-800 hover:text-blue-700">  <Flag name='au'/>Austria</Link>
+                    </li>
+                    <li>
+                      <Link to="/science" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/>Argentina</Link>
+                    </li>
+                    <li>
+                      <Link to="/sports" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/>India</Link>
+                    </li>
+                    <li>
+                      <Link to="/technology" className="text-gray-800 hover:text-blue-700"><Flag name='bg'/>Bulgaria</Link>
+                    </li>
+                  </ul>
+                 
+                )}
+              </li>
+              
               <li>
                 <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link>
               </li>
