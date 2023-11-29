@@ -2,7 +2,7 @@
     import NewsItem from './NewsItem'
     import Spinner from './Spinner';
 
-    function News({apikey,pagesize,categories}) {
+    function News({apikey,pagesize,categories,country}) {
     const[page,setpage]=useState(1)
     // const[news,setnews]=useState({
     //     articles:[],
@@ -35,12 +35,12 @@
     };
     
     fetchData();
-}, []);
+}, [country, categories, page, pagesize]);
 
 const Prevbtn = async () => {
     console.log("prev");
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page - 1}&pagesize=${pagesize}`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${categories}&apiKey=${apikey}&page=${page - 1}&pagesize=${pagesize}`);       
          const result = await response.json();
        
         setpage(page -   1);
@@ -56,7 +56,7 @@ const Prevbtn = async () => {
 const Nextbtn = async () => {
     console.log("Next")
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page + 1}&pagesize=${pagesize}`);       
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${categories}&apiKey=${apikey}&page=${page + 1}&pagesize=${pagesize}`);       
          const result = await response.json();
         setpage(page + 1);
         setnews(result.articles);

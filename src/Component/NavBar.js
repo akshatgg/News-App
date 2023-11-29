@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flag} from 'semantic-ui-react'
-
+import { NavLink } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
@@ -44,13 +44,22 @@ function NavBar() {
                 {showCategories && (
                   <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md">
                     <li>
+                    <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`}
+  >
                       <Link to="/" className="text-gray-800 hover:text-blue-700">General</Link>
+                      </NavLink>
                     </li>
                     <li>
+                    <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`}
+  >
                       <Link to="/health" className="text-gray-800 hover:text-blue-700">Health</Link>
+                    </NavLink>
                     </li>
                     <li>
+                    <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`}
+  >
                       <Link to="/science" className="text-gray-800 hover:text-blue-700">Science</Link>
+                    </NavLink>
                     </li>
                     <li>
                       <Link to="/sports" className="text-gray-800 hover:text-blue-700">Sports</Link>
@@ -78,19 +87,19 @@ function NavBar() {
                     
                     <li>
                     
-                      <Link to="/" className="text-gray-800 hover:text-blue-700"> <Flag name='au'/>Australia </Link>
+                      <Link to="/australia" className="text-gray-800 hover:text-blue-700"> <Flag name='au'/> Australia </Link>
                     </li>
                     <li>
-                      <Link to="/health" className="text-gray-800 hover:text-blue-700">  <Flag name='au'/>Austria</Link>
+                      <Link to="/austria" className="text-gray-800 hover:text-blue-700">  <Flag name='at'/> Austria </Link>
                     </li>
                     <li>
-                      <Link to="/science" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/>Argentina</Link>
+                      <Link to="/argentina" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/> Argentina </Link>
                     </li>
                     <li>
-                      <Link to="/sports" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/>India</Link>
+                      <Link to="/" className="text-gray-800 hover:text-blue-700"><Flag name='in'/> India </Link>
                     </li>
                     <li>
-                      <Link to="/technology" className="text-gray-800 hover:text-blue-700"><Flag name='bg'/>Bulgaria</Link>
+                      <Link to="/bulgaria" className="text-gray-800 hover:text-blue-700"><Flag name='bg'/> Bulgaria </Link>
                     </li>
                   </ul>
                  
@@ -98,13 +107,22 @@ function NavBar() {
               </li>
               
               <li>
-                <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link>
+              <NavLink to="./service.js" className={({ isActive }) => `${isActive ? 'text-blue-600' : 'text-gray-900'}`}>
+                {/* <Link to="./service.js" className=" {({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link> */}
+              Services
+              </NavLink>
               </li>
               <li>
-                <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</Link>
+              <NavLink to="./service.js" className={({ isActive }) => `${isActive ? 'text-blue-600' : 'text-gray-900'}`}>
+  {/* <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</Link> */}
+                   Pricing
+             </NavLink>
               </li>
               <li>
-                <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
+              <NavLink to="./service.js" className={({ isActive }) => `${isActive ? 'text-blue-600' : 'text-gray-900'}`}>
+Contact
+                {/* <Link to="/#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link> */}
+             </NavLink>
               </li>
             </ul>
           </div>

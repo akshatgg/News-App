@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/health" element={<News key="health" apikey={apikey} pagesize={6} categories="health" />} />
           <Route exact path="/technology" element={<News key="technology" apikey={apikey} pagesize={6} categories="technology" />} />
           <Route exact path="/" element={<News key="gene" apikey={apikey} pagesize={6} categories="general" />} />
+
         </Routes>
       </Router>
     </div>
