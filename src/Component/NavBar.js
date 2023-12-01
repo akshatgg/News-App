@@ -1,12 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Flag} from 'semantic-ui-react'
+import { Flag } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
+
 function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
   const [showCountry, setShowCountry] = useState(false);
+  const categoriesRef = useRef(null);
+  const countryRef = useRef(null);
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        categoriesRef.current &&
+        !categoriesRef.current.contains(event.target) &&
+        showCategories
+      ) {
+        setShowCategories(false);
+      }
+      if (
+        countryRef.current &&
+        !countryRef.current.contains(event.target) &&
+        showCountry
+      ) {
+        setShowCountry(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [showCategories, showCountry]);
 
   return (
     <div>
