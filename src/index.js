@@ -12,7 +12,7 @@ const router = (
       <Route path="/" element={<App />}>
         <Route path="" element={<News key="general" apikey={apikey} pagesize={6}  country="in" categories="general"/>} >
         <Route path="au" element={<News key="generals" apikey={apikey} pagesize={6} country="au" categories="general" />}>
-          <Route path="health" element={<News key="health" apikey={apikey} pagesize={6} categories="health" country="au" />} />
+          <Route path="/au/health" element={<News key="health" apikey={apikey} pagesize={6} categories="health" country="au" />} />
        </Route>
        </Route>
         </Route>
@@ -28,3 +28,4 @@ const router = (
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<React.StrictMode>{router}</React.StrictMode>);
+

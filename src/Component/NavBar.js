@@ -53,6 +53,7 @@ function NavBar() {
                     <li>
                     <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`}
   >
+                     
                       <Link to="/health" className="text-gray-800 hover:text-blue-700">Health</Link>
                     </NavLink>
                     </li>
