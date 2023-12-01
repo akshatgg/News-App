@@ -8,6 +8,7 @@ function NavBar() {
   const [showCountry, setShowCountry] = useState(false);
 
 
+  
   return (
     <div>
       <nav className="bg-gray-300 border-gray-200 dark:bg-gray-900">
@@ -87,19 +88,19 @@ function NavBar() {
                     
                     <li>
                     
-                      <Link to="/australia" className="text-gray-800 hover:text-blue-700"> <Flag name='au'/> Australia </Link>
+                      <Link to="/au" className="text-gray-800 hover:text-blue-700"> <Flag name='au'/> Australia </Link>
                     </li>
                     <li>
-                      <Link to="/austria" className="text-gray-800 hover:text-blue-700">  <Flag name='at'/> Austria </Link>
+                      <Link to="/at" className="text-gray-800 hover:text-blue-700">  <Flag name='at'/> Austria </Link>
                     </li>
                     <li>
-                      <Link to="/argentina" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/> Argentina </Link>
+                      <Link to="/ae" className="text-gray-800 hover:text-blue-700"><Flag name='ae'/> Argentina </Link>
                     </li>
                     <li>
                       <Link to="/" className="text-gray-800 hover:text-blue-700"><Flag name='in'/> India </Link>
                     </li>
                     <li>
-                      <Link to="/bulgaria" className="text-gray-800 hover:text-blue-700"><Flag name='bg'/> Bulgaria </Link>
+                      <Link to="/bg" className="text-gray-800 hover:text-blue-700"><Flag name='bg'/> Bulgaria </Link>
                     </li>
                   </ul>
                  

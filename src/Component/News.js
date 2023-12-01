@@ -15,7 +15,7 @@
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${categories}&apiKey=${apikey}&page=${page}&pagesize=${pagesize}`);         
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${categories}&apiKey=${apikey}&page=${page}&pagesize=${pagesize}`);         
                    const result = await response.json();
            
            
