@@ -58,10 +58,71 @@ const router = (
           path="at/sports" 
            element={<News key="at/sports" apikey={apikey} pagesize={6} categories="sports" country="at" />} />
 
+       {/* Argentina router setup */}
 
+       <Route 
+          path="ae/" 
+           element={<News key="ae/general" apikey={apikey} pagesize={6} categories="general" country="ae" />} />
 
+          <Route 
+          path="/ae/health" 
+          element={<News key="ae/health" apikey={apikey} pagesize={6} categories="health" country="ae" />} 
+          />
+           <Route 
+          path="ae/science" 
+          element={<News key="ae/science" apikey={apikey} pagesize={6} categories="science" country="ae" />} 
+          />
+           <Route 
+          path="ae/technology" 
+          element={<News key="ae/tech" apikey={apikey} pagesize={6} categories="technology" country="ae" />} 
+          />
+           <Route 
+          path="ae/sports" 
+           element={<News key="ae/sports" apikey={apikey} pagesize={6} categories="sports" country="ae" />} />
 
+      {/* India router setup */}
 
+      <Route 
+          path="in/" 
+           element={<News key="in/general" apikey={apikey} pagesize={6} categories="general" country="in" />} />
+
+          <Route 
+          path="/in/health" 
+          element={<News key="in/health" apikey={apikey} pagesize={6} categories="health" country="in" />} 
+          />
+           <Route 
+          path="in/science" 
+          element={<News key="in/science" apikey={apikey} pagesize={6} categories="science" country="in" />} 
+          />
+           <Route 
+          path="in/technology" 
+          element={<News key="in/tech" apikey={apikey} pagesize={6} categories="technology" country="in" />} 
+          />
+           <Route 
+          path="in/sports" 
+           element={<News key="in/sports" apikey={apikey} pagesize={6} categories="sports" country="in" />} />
+
+          {/* Bulgaria router setup */}
+           
+          <Route 
+          path="bg/" 
+           element={<News key="bg/general" apikey={apikey} pagesize={6} categories="general" country="bg" />} />
+
+          <Route 
+          path="/bg/health" 
+          element={<News key="bg/health" apikey={apikey} pagesize={6} categories="health" country="bg" />} 
+          />
+           <Route 
+          path="bg/science" 
+          element={<News key="bg/science" apikey={apikey} pagesize={6} categories="science" country="bg" />} 
+          />
+           <Route 
+          path="bg/technology" 
+          element={<News key="bg/tech" apikey={apikey} pagesize={6} categories="technology" country="bg" />} 
+          />
+           <Route 
+          path="bg/sports" 
+           element={<News key="bg/sports" apikey={apikey} pagesize={6} categories="sports" country="bg" />} />
 
 
 
