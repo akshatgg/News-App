@@ -42,7 +42,9 @@ function NavBar() {
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-300 text-xl dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
            
-           
+            <li>
+<NavLink className={({ isActive }) => `${isActive ? 'text-gray-900' : 'text-gray-600'}` } to={" "}>Home</NavLink>
+</li>
             <li className='z-10' style={{ position: 'relative' }}>
         <Link
           onClick={handleCountryClick}
@@ -101,6 +103,13 @@ function NavBar() {
        </ul>
         )}
       </li>
+      <li>
+<NavLink className={({ isActive }) => `${isActive ? 'text-gray-900' : 'text-gray-600'}`}>About</NavLink>
+</li>
+<li>
+<NavLink className={({ isActive }) => `${isActive ? 'text-gray-900' : 'text-gray-600'}`}>Contact</NavLink>
+</li>
+
 
             </ul>
           </div>
