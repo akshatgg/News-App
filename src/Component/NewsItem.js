@@ -10,6 +10,7 @@ function NewsItem({ title, description, image, readMore, author, date, badgeNumb
             {badgeNumber}
           </div>
         )}
+        
         <a href="#">
           <img className="rounded-t-lg" src={image} alt="" />
         </a>
