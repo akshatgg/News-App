@@ -1,13 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Flag } from 'semantic-ui-react';
+import { Flag} from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
-
 function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
   const [showCountry, setShowCountry] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const[country,setcountry]=useState(" ");
+  const handleCountryClick = () => {
+    setShowCountry(!showCountry);
+    setShowCategories(false);
+  };
 
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country);
+    setShowCategories(!showCategories);
+  };
 
   
   return (
