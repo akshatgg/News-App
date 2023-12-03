@@ -12,23 +12,65 @@ const router = (
   <Router>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route
-          path="au"
-          element={
-            <News key="general" apikey={apikey} pagesize={6} country="au" categories="general" />
-          }
-        >
-          <Route path="health" element={<News key="health" apikey={apikey} pagesize={6} categories="health" country="au" />} />
-          
-       
-       
-       
-       
+      
+      {/* Australia router setup */}
+      
+           <Route 
+          path="au/" 
+           element={<News key="au/general" apikey={apikey} pagesize={6} categories="general" country="au" />} />
+
+          <Route 
+          path="/au/health" 
+          element={<News key="au/health" apikey={apikey} pagesize={6} categories="health" country="au" />} 
+          />
+           <Route 
+          path="au/science" 
+          element={<News key="au/science" apikey={apikey} pagesize={6} categories="science" country="au" />} 
+          />
+           <Route 
+          path="au/technology" 
+          element={<News key="au/tech" apikey={apikey} pagesize={6} categories="technology" country="au" />} 
+          />
+           <Route 
+          path="au/sports" 
+           element={<News key="au/sports" apikey={apikey} pagesize={6} categories="sports" country="au" />} />
+
+
+      {/* Austria router setup */}
+
+      <Route 
+          path="at/" 
+           element={<News key="at/general" apikey={apikey} pagesize={6} categories="general" country="at" />} />
+
+          <Route 
+          path="/at/health" 
+          element={<News key="at/health" apikey={apikey} pagesize={6} categories="health" country="at" />} 
+          />
+           <Route 
+          path="at/science" 
+          element={<News key="at/science" apikey={apikey} pagesize={6} categories="science" country="at" />} 
+          />
+           <Route 
+          path="at/technology" 
+          element={<News key="at/tech" apikey={apikey} pagesize={6} categories="technology" country="at" />} 
+          />
+           <Route 
+          path="at/sports" 
+           element={<News key="at/sports" apikey={apikey} pagesize={6} categories="sports" country="at" />} />
+
+
+
+
+
+
+
+
+
+
         </Route>
-      </Route>
     </Routes>
   </Router>
-);
+);                             
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<React.StrictMode>{router}</React.StrictMode>);

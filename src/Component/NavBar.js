@@ -7,7 +7,7 @@ function NavBar() {
   const [showCategories, setShowCategories] = useState(false);
   const [showCountry, setShowCountry] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
-
+  const[country,setcountry]=useState(" ");
   const handleCountryClick = () => {
     setShowCountry(!showCountry);
     setShowCategories(false);
@@ -54,10 +54,10 @@ function NavBar() {
         {showCountry && (
           <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: selectedCountry ? 0 : '100%' }}>
             <li>
-              <Link to="/au" onClick={() => handleCountrySelect('Australia')} className="text-gray-800 hover:text-blue-700">Australia</Link>
+              <Link to="/au" onClick={() => {handleCountrySelect('Australia');setcountry("au")}} className="text-gray-800 hover:text-blue-700">Australia</Link>
             </li>
             <li>
-              <Link to="/at" onClick={() => handleCountrySelect('Austria')} className="text-gray-800 hover:text-blue-700">Austria</Link>
+              <Link to="/at" onClick={() =>{ handleCountrySelect('Austria');setcountry("at")}} className="text-gray-800 hover:text-blue-700">Austria</Link>
             </li>
             <li>
               <Link to="/ae" onClick={() => handleCountrySelect('Argentina')} className="text-gray-800 hover:text-blue-700">Argentina</Link>
@@ -72,30 +72,33 @@ function NavBar() {
           </ul>
         )}
         {showCategories && (
-          <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: '110%' }}>
-            <li>
-              <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to="/au">
-                General
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to="/au/health">
-              Health
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to="/science">
-                <Link to="/au/science" className="text-gray-800 hover:text-blue-700">Science</Link>
-              </NavLink>
-            </li>
-            <li>
-              <Link to="/au/sports" className="text-gray-800 hover:text-blue-700">Sports</Link>
-            </li>
-            <li>
-              <Link to="/au/technology" className="text-gray-800 hover:text-blue-700">Technology</Link>
-            </li>
-            {/* Add more categories as needed */}
-          </ul>
+         <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: '110%' }}>
+         <li>
+           <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}`}>
+             General
+           </NavLink>
+         </li>
+         <li>
+           <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}/health`}>
+             Health
+           </NavLink>
+         </li>
+         <li>
+           <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}/science`}>
+             Science
+           </NavLink>
+         </li>
+         <li>
+           <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}/sports`}>
+             Sports
+           </NavLink>
+         </li>
+         <li>
+           <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}/technology`}>
+             Technology
+           </NavLink>
+         </li>
+       </ul>
         )}
       </li>
 
