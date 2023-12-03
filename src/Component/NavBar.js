@@ -63,7 +63,7 @@ function NavBar() {
               <Link to="/ae" onClick={() =>{ handleCountrySelect('Argentina');setcountry("ae")}} className="text-gray-800 hover:text-blue-700 flex"><Flag name='ae' /> Argentina</Link>
             </li>
             <li>
-              <Link to="/" onClick={() =>{ handleCountrySelect('India');setcountry("in")}} className="text-gray-800 hover:text-blue-700 flex"><Flag name='in' /> India</Link>
+              <Link to="/in" onClick={() =>{ handleCountrySelect('India');setcountry("in")}} className="text-gray-800 hover:text-blue-700 flex"><Flag name='in' /> India</Link>
             </li>
             <li>
               <Link to="/bg" onClick={() =>{ handleCountrySelect('Bulgaria');setcountry("bg")}} className="text-gray-800 hover:text-blue-700 flex"><Flag name='bg' /> Bulgaria</Link>

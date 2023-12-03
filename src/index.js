@@ -5,16 +5,22 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
 import News from './Component/News';
+import FrontPage from './Component/FrontPage';
 
 let apikey = process.env.REACT_APP_API_KEY;
 
 const router = (
   <Router>
     <Routes>
-      <Route path="/" element={<App />}>
+      <Route path="" element={<App />}>
       
       {/* Australia router setup */}
-      
+    
+      <Route 
+          path="" 
+          element={<FrontPage/>}
+          />
+
            <Route 
           path="au/" 
            element={<News key="au/general" apikey={apikey} pagesize={6} categories="general" country="au" />} />
