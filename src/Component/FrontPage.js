@@ -15,7 +15,6 @@ function FrontPage() {
            <div className='col-start-2 justify-self-center place-self-center text-3xl' >
             This is the best site you can see news where you want to every <br/> news in every 
             category. Customize your news feed to match your<br/> interests and passions.
-
            </div>
       </div>
 

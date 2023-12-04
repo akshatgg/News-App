@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import NavBar from './Component/NavBar';
+import Footer from './Component/Footer';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <>
     <NavBar/>
     <Outlet/>
+    <Footer/>
     </>
   )
 }
