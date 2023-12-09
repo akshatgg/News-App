@@ -54,7 +54,7 @@ function NavBar() {
           {selectedCountry ? selectedCountry : 'Country'} &#9662;
         </Link>
         {showCountry && (
-          <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: selectedCountry ? 0 : '100%' }}>
+  <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: selectedCountry ? 0 : '100%' }}>
             <li>
               <Link to="/au" onClick={() => {handleCountrySelect('Australia');setcountry("au")}} className="text-gray-800 hover:text-blue-700 flex"><Flag name='au'  />  Australia</Link>
             </li>
@@ -73,8 +73,8 @@ function NavBar() {
             {/* Add more countries as needed */}
           </ul>
         )}
-        {showCategories && (
-         <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: '110%' }}>
+{showCategories && (
+  <ul className="absolute mt-2 space-y-2 bg-white p-2 rounded-md shadow-md" style={{ top: '100%', left: showCountry ? '0' : '110%' }}>
          <li>
            <NavLink className={({ isActive }) => `${isActive ? 'text-orange-500' : 'text-gray-600'}`} to={`/${country}`}>
              General
